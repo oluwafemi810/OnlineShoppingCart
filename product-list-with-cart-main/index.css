@@ -60,9 +60,6 @@ body{
       justify-content: center;
 }
 
-.add-to-cart:hover{
-      background-color: hsl(14, 86%, 42%);
-}
 .right-part{
     margin-left: 3em;
     background-color: white;
@@ -112,7 +109,7 @@ body{
 .item-clearance{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1.5em;
 }
 
@@ -127,4 +124,46 @@ body{
 
 .cancel-button:hover{
     opacity: 0.4;
+}
+
+.cancel-button:active{
+    opacity: 0.8;
+}
+
+.quantity-selector {
+  display: none;
+  background-color: hsl(14, 86%, 42%);
+  border-radius: 1em;
+  padding: 7px 10px;
+  gap: 37px;
+  align-items: center;
+}
+
+.food-image-section:hover .quantity-selector {
+  display: flex;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.15s;
+}
+
+.quantity-btn {
+    background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+.quantity-num {
+  min-width: 20px;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+}
+.item-line{
+    width: 93%;
+    opacity: 0.2;
 }
