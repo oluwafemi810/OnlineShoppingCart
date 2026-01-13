@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const foodSection = document.querySelector('.food-section');
   const cartItems = document.querySelector('.cart-items');
   const cartCount = document.querySelector('.cart-count');
-
+  const cartTotal = document.querySelector('.cart-total');
+  const totalAmountEl = document.querySelector('.total-amount');
+  
   fetch('data.json')
     .then(res => res.json())
     .then(foods => {
@@ -55,43 +57,56 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       function updateCart() {
-        // Clear cart
         cartItems.innerHTML = '';
         let totalCount = 0;
-        
-        Object.values(cart).forEach(item => {
-          if (item.quantity > 0) {
-        
-            let itemAmount = item.price * item.quantity;
-            totalCount += item.quantity;
+        let totalAmount = 0;
 
-            cartItems.innerHTML += `
-              <div class="price-tag">
-                <h4>${item.name}</h4>
-                <div class="item-clearance">
-                  <strong>${item.quantity}x</strong>
-                  <p>@$${item.price.toFixed(2)}</p>
-                  <p>$${(itemAmount).toFixed(2)}</p>
-                  <button class="cancel-button"> <img src="assets/images/icon-remove-item.svg"> </button>
-                </div>
-                <hr class = "item-line">
-            `;
-          }
-        });
+        Object.values(cart).forEach(item => {
+            if (item.quantity > 0) {
+        let itemAmount = item.price * item.quantity;
+        totalCount += item.quantity;
+        totalAmount += itemAmount;
+
+        cartItems.innerHTML += `
+            <div class="price-tag">
+            <h4>${item.name}</h4>
+            <div class="item-clearance">
+                <strong>${item.quantity}x</strong>
+                <p>@$${item.price.toFixed(2)}</p>
+                <p>$${itemAmount.toFixed(2)}</p>
+                <button class="cancel-button">
+                <img src="assets/images/icon-remove-item.svg">
+                </button>
+            </div>
+            <hr class="item-line">
+            </div>
+        `;
+        }
+    });
 
         cartCount.textContent = totalCount;
 
-        // Add remove button functionality
+        /* SHOW / HIDE TOTAL */
+        if (totalCount > 0) {
+            cartTotal.style.display = 'block';
+            totalAmountEl.textContent = `$${totalAmount.toFixed(2)}`;
+        } else {
+            cartTotal.style.display = 'none';
+        }
+
+        // Remove item buttons
         cartItems.querySelectorAll('.cancel-button').forEach((btn, i) => {
-          btn.addEventListener('click', () => {
+            btn.addEventListener('click', () => {
             const keys = Object.keys(cart).filter(key => cart[key].quantity > 0);
             const key = keys[i];
             cart[key].quantity = 0;
-            foodSection.querySelector(`.food-item[data-index="${key}"] .quantity-num`).textContent = 0;
+            foodSection.querySelector(
+                `.food-item[data-index="${key}"] .quantity-num`
+            ).textContent = 0;
             updateCart();
-          });
+            });
         });
-      }
+        }
     })
     .catch(err => console.error(err));
 });

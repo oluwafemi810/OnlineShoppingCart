@@ -183,3 +183,12 @@ body{
     justify-content: center;
     gap: 7px;
 }
+.cart-total{
+    display: none;
+}
+.total-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
