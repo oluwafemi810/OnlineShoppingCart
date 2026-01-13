@@ -58,9 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear cart
         cartItems.innerHTML = '';
         let totalCount = 0;
-
+        
         Object.values(cart).forEach(item => {
           if (item.quantity > 0) {
+        
+            let itemAmount = item.price * item.quantity;
             totalCount += item.quantity;
 
             cartItems.innerHTML += `
@@ -69,13 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="item-clearance">
                   <strong>${item.quantity}x</strong>
                   <p>@$${item.price.toFixed(2)}</p>
-                  <p>$${(item.price * item.quantity).toFixed(2)}</p>
+                  <p>$${(itemAmount).toFixed(2)}</p>
                   <button class="cancel-button"> <img src="assets/images/icon-remove-item.svg"> </button>
                 </div>
-
                 <hr class = "item-line">
-                
-              </div>
             `;
           }
         });
