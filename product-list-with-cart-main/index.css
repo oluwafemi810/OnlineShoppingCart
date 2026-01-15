@@ -192,3 +192,30 @@ body{
     align-items: center;
 }
 
+@media (max-width: 890px) {
+    .food-image {
+      width: 80%;
+    }   
+
+     .food-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+    .main-body{
+      padding: 1em 1em;
+    }
+    .add-to-cart{
+      display: none;
+    }
+    
+    .quantity-selector {
+    display: flex;
+    position: absolute;
+    padding: 0 6px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 12px
+    }
+    
+}
