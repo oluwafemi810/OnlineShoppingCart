@@ -218,4 +218,7 @@ body{
     gap: 12px
     }
     
+    .delivery-note-text{
+        font-size: 10px;
+    }
 }
