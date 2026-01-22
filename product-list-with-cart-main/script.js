@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cartItems.innerHTML += `
             <div class="price-tag">
-            <h4>${item.name}</h4>
+            <h4 class = "order-item-name">${item.name}</h4>
             <div class="item-clearance">
                 <strong>${item.quantity}x</strong>
                 <p>@$${item.price.toFixed(2)}</p>

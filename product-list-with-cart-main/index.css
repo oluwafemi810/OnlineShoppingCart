@@ -42,6 +42,10 @@ body{
       height: auto;
       object-fit: cover;
 }
+.food-image:hover{
+    border: solid;
+    border-color: hsl(14, 86%, 42%);
+}
 .food-description{
       line-height: .7cm;
       margin-top: 1em;
@@ -221,4 +225,20 @@ body{
     .delivery-note-text{
         font-size: 10px;
     }
+
+    .order-item-name{
+        font-size: 12px;
+    }
+
+    .item-clearance{
+        gap: .2em;
+    }
+    .item-clearance p{
+        font-size: 10px;
+    }
+
+    .item-clearance strong{
+        font-size: 12px;
+    }
+    
 }
