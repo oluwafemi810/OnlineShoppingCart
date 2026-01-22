@@ -202,8 +202,8 @@ body{
     }   
 
      .food-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .main-body{
       padding: 1em 1em;
@@ -213,13 +213,13 @@ body{
     }
     
     .quantity-selector {
-    display: flex;
-    position: absolute;
-    padding: 0 6px;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 12px
+        display: flex;
+        position: absolute;
+        padding: 0 6px;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 12px
     }
     
     .delivery-note-text{
@@ -241,4 +241,32 @@ body{
         font-size: 12px;
     }
     
+    .total-row strong{
+        font-size: 10px;
+    }
+
+    .total-amount{
+        font-size: 15px;
+    }
+    .your-cart{
+        font-size: 1em;
+    }
+    .right-part{
+        background-color: transparent;
+        height: fit-content;
+        border-radius: 0em;
+        padding: 0 1em;
+        right: 1.2%;
+        top: 10%;
+    }
+    .food-description {
+        font-size: .8em;
+        margin-top: 1.3em;
+        line-height: .5cm;
+    }
+
+    .food-image:hover{
+        border: none;
+
+    }
 }
