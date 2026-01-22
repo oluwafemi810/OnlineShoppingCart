@@ -231,7 +231,7 @@ body{
     }
 
     .item-clearance{
-        gap: .2em;
+        gap: .1em;
     }
     .item-clearance p{
         font-size: 10px;
@@ -249,14 +249,15 @@ body{
         font-size: 15px;
     }
     .your-cart{
-        font-size: 1em;
+        font-size: .8em;
     }
     .right-part{
         background-color: transparent;
         height: fit-content;
         border-radius: 0em;
-        padding: 0 1em;
-        right: 1.2%;
+        padding: 0;
+        right: 0;
+        width: 32%;
         top: 10%;
     }
     .food-description {
@@ -267,6 +268,20 @@ body{
 
     .food-image:hover{
         border: none;
-
+    
+    }
+    .main-body{
+        padding: 0;
+    }
+    .confirm-order{
+        font-size: .6em;
+        width: 60%;
+    }
+    .confirm-order-division{
+        display: flex;
+        justify-content: center;
+    }
+    .cancel-button{
+        border: none;
     }
 }
